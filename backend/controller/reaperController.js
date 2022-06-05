@@ -118,7 +118,7 @@ const claimStake = asyncHandler(async (req, res) => {
 
       if(word.nfts.length > 0 && word.nfts[0] == asset_id[0]) {
         let nowTime = new Date();
-        if(word.machine == "Oil") {
+        if(word.machine == "Foundries") {
           word.next_run = new Date(nowTime.getTime() + periodFoundrie);;
         } else if (word.machine == "Oil") {
           word.next_run = new Date(nowTime.getTime() + periodOil);;
