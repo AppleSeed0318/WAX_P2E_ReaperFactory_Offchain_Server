@@ -1,6 +1,7 @@
 import mongoose from 'mongoose';
 
 const connectDB = async () => {
+  console.log("connecting mongodb ...");
   try {
     const conn = await mongoose.connect('mongodb://localhost:27017/reaperDB3', {
       useUnifiedTopology: true,
@@ -8,9 +9,10 @@ const connectDB = async () => {
       useCreateIndex: true,
       useFindAndModify: false,
     });
-
+    
     console.log(`MongoDB Connected: ${conn.connection.host}`);
   } catch (error) {
+    
     console.error(`Error: ${error.message}`);
     process.exit(1);
   }

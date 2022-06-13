@@ -6,6 +6,7 @@ import bodyParser from 'body-parser';
 connectDB();
 
 import reaperRoutes from './router/reaper.js';
+import resourceRoutes from './router/resource.js';
 
 const app = express();
 
@@ -21,6 +22,7 @@ app.use((req, res, next) => {
   });
   
 app.use('/reaper', reaperRoutes);
+app.use('/resource', resourceRoutes);
 
 app.use(cors());
 
